@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace PRG281_Milestone_2
 {
-    internal class Program
+    public class UserAccount
+{
+    public string Username { get; set; }
+    public string PasswordHash { get; set; }
+
+    public UserAccount(string username, string password)
     {
-        static void Main(string[] args)
-        {
-        }
+        Username = username;
+        PasswordHash = password;
     }
+
+    public bool ValidatePassword(string password)
+    {
+        return PasswordHash == password;
+    }
+}
 }
